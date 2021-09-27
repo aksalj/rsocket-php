@@ -27,6 +27,11 @@ class RSocketConnector
      */
     private $disconnectHandler;
 
+    /**
+     * @var callable
+     */
+    private $errorConsumer;
+
     public static function create(LoopInterface $loop): RSocketConnector
     {
         $RSocketConnector = new self();
@@ -75,6 +80,15 @@ class RSocketConnector
         return $this;
     }
 
+    public function setErrorConsumer(callable $errorConsumer): self
+    {
+        if (!is_null($errorConsumer)) {
+            $this->errorConsumer = $errorConsumer;
+        }
+
+        return $this;
+    }
+
     /**
      * @param string $url rsocket uri
      * @return PromiseInterface<RSocket>
@@ -110,6 +124,10 @@ class RSocketConnector
                     $rsocketRequester = new RSocketRequester($loop, $duplexConn, $setupPayload, "requester");
                     if (!is_null($this->disconnectHandler)) {
                         $rsocketRequester->setDisconnectHandler($this->disconnectHandler);
+                    }
+
+                    if (!is_null($this->errorConsumer)) {
+                        $rsocketRequester->setErrorConsumer($this->errorConsumer);
                     }
 
                     if (!is_null($acceptor)) {

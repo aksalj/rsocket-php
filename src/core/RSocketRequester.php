@@ -139,14 +139,12 @@ class RSocketRequester implements RSocket
                 }
                 break;
             case FrameType::$ERROR:
-                if (array_key_exists($streamId, $this->senders)) {
-                    $error = new RSocketException($frame->code, $frame->message);
-                    if ($streamId === 0) {
-                        ($this->errorConsumer)($error);
-                    } else {
-                        $asyncSubject = $this->senders[$streamId];
-                        $asyncSubject->onError($error);
-                    }
+                $error = new RSocketException($frame->message, $frame->code);
+                if ($streamId === 0) {
+                    ($this->errorConsumer)($error);
+                } else if (array_key_exists($streamId, $this->senders)) {
+                    $asyncSubject = $this->senders[$streamId];
+                    $asyncSubject->onError($error);
                 }
                 break;
             case FrameType::$REQUEST_RESPONSE:
