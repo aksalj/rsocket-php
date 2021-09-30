@@ -1,5 +1,5 @@
 {
-  "name": "rsocket/rsocket-php",
+  "name": "aksalj/rsocket-php",
   "description": "RSocket PHP SDK based on ReactPHP and RxPHP",
   "version": "0.1.0",
   "type": "library",
@@ -8,7 +8,7 @@
     "rpc",
     "reactive"
   ],
-  "homepage": "https://github.com/rsocket/rsocket-php",
+  "homepage": "https://github.com/aksalj/rsocket-php",
   "time": "2020-02-22",
   "license": "Apache License 2.0",
   "authors": [
@@ -20,11 +20,10 @@
     }
   ],
   "support": {
-    "email": "libing.chen@gmail.com",
-    "issues": "https://github.com/rsocket/rsocket-php/issues",
-    "wiki": "https://github.com/rsocket/rsocket-php",
-    "source": "https://github.com/rsocket/rsocket-php",
-    "docs": "https://github.com/rsocket/rsocket-php/wiki"
+    "issues": "https://github.com/aksalj/rsocket-php/issues",
+    "wiki": "https://github.com/aksalj/rsocket-php",
+    "source": "https://github.com/aksalj/rsocket-php",
+    "docs": "https://github.com/aksalj/rsocket-php/wiki"
   },
   "require": {
     "php": "~7.4",
