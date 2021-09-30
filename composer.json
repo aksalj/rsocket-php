@@ -1,7 +1,7 @@
 {
-  "name": "aksalj/rsocket-php",
+  "name": "aksalj/rsocket",
   "description": "RSocket PHP SDK based on ReactPHP and RxPHP",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "library",
   "keywords": [
     "rsocket",

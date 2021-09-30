@@ -1,6 +1,6 @@
 RSocket PHP
 ================
-[![Composer](https://img.shields.io/packagist/v/rsocket/rsocket-php)](https://packagist.org/packages/rsocket/rsocket-php)
+[![Composer](https://img.shields.io/packagist/v/aksalj/rsocket)](https://packagist.org/packages/aksalj/rsocket)
 
 RSocket PHP SDK based on ReactPHP and RxPHP.
 
@@ -48,7 +48,7 @@ print("RSocket Server started on ${listenUri}");
 
 # RSocket Service stub and routing
 
-Please check https://github.com/rsocket/rsocket-php/tree/master/tests/route
+Please check https://github.com/aksalj/rsocket-php/tree/master/tests/route
 
 # RSocket
 
